@@ -49,7 +49,7 @@ class HX711:
         samples = [self.read() for _ in range(10)]
         self.tare_offset = sum(samples) // len(samples)
         print("Tared")
-    def get_grams(self, scale_factor=1068):
+    def get_grams(self, scale_factor=1072):
         return (self.read() - self.tare_offset) / scale_factor
 
 # Pressure transducer on GP26
